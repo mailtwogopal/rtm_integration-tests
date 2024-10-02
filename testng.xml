@@ -1,7 +1,7 @@
 <suite name="AllTests">
     <test name="BookingApiTests">
         <classes>
-            <class name="com.rtm.tests.BookerApiTests" />
+            <class name="com.rtm.tests.TestRTMAuthToken" />
         </classes>
     </test>
 </suite>

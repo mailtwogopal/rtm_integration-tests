@@ -1,7 +1,6 @@
 package com.rtm.tests;
 
 import com.rtm.utils.ApiUtils;
-import com.rtm.utils.ConfigLoader;
 import com.rtm.utils.TestDataStore;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
@@ -11,14 +10,18 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import java.util.Map;
 
-public class BookerApiTests {
+public class TestRTMAuthToken {
+	
+	private ApiUtils apiUtils;
 
     @BeforeClass
     public void setup() {
-        RestAssured.baseURI = ConfigLoader.getEnv("BASE_URL");
+    	apiUtils = new ApiUtils();
+    	
+        RestAssured.baseURI = "https://rtmws-a095aea7bc3e.herokuapp.com"; //ConfigLoader.getEnv("BASE_URL");
 
-        Map<String, String> credentials = ApiUtils.getCredentials();
-        Response response = ApiUtils.authenticateAndGetToken(credentials);
+        Map<String, String> credentials = apiUtils.getCredentials();
+        Response response = apiUtils.authenticateAndGetToken(credentials);
 
         ApiUtils.ensureSuccessfulAuthentication(response);
 
@@ -29,7 +32,7 @@ public class BookerApiTests {
 
 
     @Test(priority = 1)
-    public void createBookingHappyPath() {
+    public void testRTMToken() {
         String payload = ApiUtils.getHappyPathPayload();
         Response response = ApiUtils.postBooking(payload);
         System.out.println("The bookingid is:" + response.asString());

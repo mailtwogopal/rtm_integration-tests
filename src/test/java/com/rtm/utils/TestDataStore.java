@@ -1,4 +1,4 @@
-package com.booking.utils;
+package com.rtm.utils;
 
 import java.util.HashMap;
 import java.util.Map;
