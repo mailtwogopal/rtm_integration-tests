@@ -1,4 +1,4 @@
-package com.booking.utils;
+package com.rtm.utils;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;

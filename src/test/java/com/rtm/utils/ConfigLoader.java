@@ -1,4 +1,4 @@
-package com.booking.utils;
+package com.rtm.utils;
 
 import io.github.cdimascio.dotenv.Dotenv;
 

@@ -1,8 +1,8 @@
-package com.booking.tests;
+package com.rtm.tests;
 
-import com.booking.utils.ApiUtils;
-import com.booking.utils.ConfigLoader;
-import com.booking.utils.TestDataStore;
+import com.rtm.utils.ApiUtils;
+import com.rtm.utils.ConfigLoader;
+import com.rtm.utils.TestDataStore;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.testng.Assert;
